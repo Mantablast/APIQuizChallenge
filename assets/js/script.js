@@ -58,12 +58,11 @@ function revealQuestions() {
 
 //Create questions loop
 function startQuiz(questions) {
-
 //Attempt to loop questions through the upper display box
-
 for (i = 0; i < questions; i++) {
     var currentQ = document.querySelector("question-text");
-    currentQ.textContent += questions[i].q;
+    console.log(questions[i].q);
+    currentQ.textContent = questions[i].q;
 
 }
 
