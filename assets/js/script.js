@@ -18,7 +18,7 @@ var optionA = document.querySelector("#question-a");
 var optionB = document.querySelector("#question-b");
 var optionC = document.querySelector("#question-c");
 var optionD = document.querySelector("#question-d");
-
+var userchoice = "";
 
 function hideStart() {
     document.getElementById('button-style').style.visibility = "hidden";
@@ -57,15 +57,49 @@ function revealQuestions() {
 };
 
 //Create questions loop
-function startQuiz(questions) {
+function startQuiz() {
 //Attempt to loop questions through the upper display box
-for (i = 0; i < questions; i++) {
-    var currentQ = document.querySelector("question-text");
-    console.log(questions[i].q);
+for (i = 0; i < questions.length; i++) {
+    console.log(currentQ);
+    var currentQ = document.getElementById("question-text");
     currentQ.textContent = questions[i].q;
-
+    var currentA = document.getElementById("question-a");
+    currentA.textContent = questions[i].a;
+    var currentB = document.getElementById("question-b");
+    currentB.textContent = questions[i].b;
+    var currentC = document.getElementById("question-c");
+    currentC.textContent = questions[i].c;
+    var currentD = document.getElementById("question-d");
+    currentD.textContent = questions[i].d;
+    
+    // document.getElementById("question-a").addEventListener("click", pickedAnswerA);
+    // document.getElementById("question-b").addEventListener("click", pickedAnswerB);
+    // document.getElementById("question-c").addEventListener("click", pickedAnswerC);
+    // document.getElementById("question-d").addEventListener("click", pickedAnswerD);
+    
+    // function pickedAnswerA() {
+    //     var userchoice = "a";
+    // }
+    // function pickedAnswerB() {
+    //     var userchoice = "b";
+    // }
+    // function pickedAnswerC() {
+    //     var userchoice = "c";
+    // }
+    // function pickedAnswerD() {
+    //     var userchoice = "d";
+    // }
+    // else if(userchoice === questions[i].ans) {
+    //     displayResult = document.querySelector("#resultDisplay");
+    //     displayResult.textContent = "That's correct!  Point scored!";
+    //     score ++;
+    // }
+    // else {
+    //     displayResult = document.querySelector("#resultDisplay");
+    //     displayResult.textContent = "No dice, beans and rice.  No point scored.";
+    // }
 }
-
+    
 };
 
 
@@ -74,6 +108,7 @@ document.getElementById("button-style").addEventListener("click", initialClick);
 document.getElementById('display-box-b').style.visibility = "hidden";
 document.getElementById("button-style").addEventListener("click", revealQuestions);
 document.getElementById("button-style").addEventListener("click", hideStart);
+
 
 
 

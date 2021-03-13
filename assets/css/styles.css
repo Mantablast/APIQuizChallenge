@@ -37,13 +37,21 @@ button-style {
     align-items: center;
     text-align:center
 }
-#display-box-a, #display-box-b {
+#display-box-a {
     display: flex;
     justify-content: center;
     align-items: baseline;
-    height: 150px;
+    height: 100px;
     background-color: #b6dae5;
 }
+#display-box-b {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 250px;
+    background-color: #b6dae5;
+}
+
 
 #display-box-a {
     font-weight: 700;
@@ -51,7 +59,7 @@ button-style {
 }
 
 #question-container p {
-    background-color: #b6dae5;
+    background-color: #f0cf88;
     padding: 10px;
     border-radius: 15px;
     display: flex;
