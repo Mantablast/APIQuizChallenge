@@ -60,9 +60,9 @@ function revealQuestions() {
 function startQuiz(questions) {
 
 //Attempt to loop questions through the upper display box
-// var quizQuestion = questions[i].q;
+
 for (i = 0; i < questions; i++) {
-    var currentQ = document.getElementById("question-text");
+    var currentQ = document.querySelector("question-text");
     currentQ.textContent += questions[i].q;
 
 }
