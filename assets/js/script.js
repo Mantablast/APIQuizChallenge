@@ -9,15 +9,15 @@ var questions = [
 
 //Score to start at zero
 var score= 0;
-var quizQuestion = document.getElementById('question-container');
-var optionsContainer = document.getElementById('display-box-b');
-var displayResult = document.getElementById('resultDisplay');
-var submitButton = document.getElementsByClassName('button-style');
+var quizQuestion = document.querySelector("#question-text");
+var optionsContainer = document.querySelector("#display-box-b");
+var displayResult = document.querySelector("#resultDisplay");
+var submitButton = document.querySelector('start.btn');
 var timerDisplay = document.getElementById('time-countdown');
-var optionA = document.getElementById('question-a');
-var optionB = document.getElementById('question-b');
-var optionC = document.getElementById('question-c');
-var optionD = document.getElementById('question-d');
+var optionA = document.querySelector("#question-a");
+var optionB = document.querySelector("#question-b");
+var optionC = document.querySelector("#question-c");
+var optionD = document.querySelector("#question-d");
 
 
 function hideStart() {
@@ -46,7 +46,7 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             alert("Oh no!  You ran out of time.  Please enter your username...")
-            // highScore();  to be created
+            // highScore(score);  to be created
         }
         
     }, 1000);
@@ -57,25 +57,16 @@ function revealQuestions() {
 };
 
 //Create questions loop
-function startQuiz(questions, quizQuestion, optionA, optionB, optionC, optionD) {
+function startQuiz(questions) {
 
 //Attempt to loop questions through the upper display box
-for (i = 0; i < questions.length; i++) {
-//How do I display the first question.
-var answer = 
+// var quizQuestion = questions[i].q;
+for (i = 0; i < questions; i++) {
+    var currentQ = document.getElementById("question-text");
+    currentQ.textContent += questions[i].q;
 
-console.log(questions[i]);
-// TODO: Check the user's answer against the correct answer
-if(answer[i] === questions[i].ans) {
-    score ++;
-    //Display the user is correction in the results display
 }
-else(
-    //Display the user is incorrect in the results display
-    console.log("wrong answer")
-)
-}
-console.log("i am alive");
+
 };
 
 
@@ -102,8 +93,6 @@ document.getElementById("button-style").addEventListener("click", hideStart);
 //         3. begin looping through questions
 //         4. for each question iteration, you can target the question-text id to set its value equal to the first question text
 //         5. them you can target the a,b,c,d id's and set those values to the corresponding answers
-
-
 
 
 
