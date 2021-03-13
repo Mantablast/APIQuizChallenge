@@ -18,7 +18,9 @@ var optionA = document.querySelector("#question-a");
 var optionB = document.querySelector("#question-b");
 var optionC = document.querySelector("#question-c");
 var optionD = document.querySelector("#question-d");
-var userchoice = "";
+var userchoice = " ";
+var currentQindex = 0;
+var currentQ = questions[currentQindex];
 
 function hideStart() {
     document.getElementById('button-style').style.visibility = "hidden";
@@ -58,46 +60,90 @@ function revealQuestions() {
 
 //Create questions loop
 function startQuiz() {
+    
 //Attempt to loop questions through the upper display box
 for (i = 0; i < questions.length; i++) {
-    console.log(currentQ);
+    
     var currentQ = document.getElementById("question-text");
-    currentQ.textContent = questions[i].q;
+    currentQ.textContent = questions[currentQindex].q;
     var currentA = document.getElementById("question-a");
-    currentA.textContent = questions[i].a;
+    currentA.textContent = questions[currentQindex].a;
     var currentB = document.getElementById("question-b");
-    currentB.textContent = questions[i].b;
+    currentB.textContent = questions[currentQindex].b;
     var currentC = document.getElementById("question-c");
-    currentC.textContent = questions[i].c;
+    currentC.textContent = questions[currentQindex].c;
     var currentD = document.getElementById("question-d");
-    currentD.textContent = questions[i].d;
+    currentD.textContent = questions[currentQindex].d;
+    // console.log(questions[currentQindex]);
     
-    // document.getElementById("question-a").addEventListener("click", pickedAnswerA);
-    // document.getElementById("question-b").addEventListener("click", pickedAnswerB);
-    // document.getElementById("question-c").addEventListener("click", pickedAnswerC);
-    // document.getElementById("question-d").addEventListener("click", pickedAnswerD);
+    document.getElementById("question-a").addEventListener("click", pickedAnswerA);
+    document.getElementById("question-b").addEventListener("click", pickedAnswerB);
+    document.getElementById("question-c").addEventListener("click", pickedAnswerC);
+    document.getElementById("question-d").addEventListener("click", pickedAnswerD);
     
-    // function pickedAnswerA() {
-    //     var userchoice = "a";
-    // }
-    // function pickedAnswerB() {
-    //     var userchoice = "b";
-    // }
-    // function pickedAnswerC() {
-    //     var userchoice = "c";
-    // }
-    // function pickedAnswerD() {
-    //     var userchoice = "d";
-    // }
-    // else if(userchoice === questions[i].ans) {
-    //     displayResult = document.querySelector("#resultDisplay");
-    //     displayResult.textContent = "That's correct!  Point scored!";
-    //     score ++;
-    // }
-    // else {
-    //     displayResult = document.querySelector("#resultDisplay");
-    //     displayResult.textContent = "No dice, beans and rice.  No point scored.";
-    // }
+    function pickedAnswerA() {
+        var userchoice = "a";
+        if(userchoice === (questions[currentQindex].ans)) {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "That's correct!  Point scored!";
+            score ++;
+            
+        }
+        else {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+            
+        }
+    }
+    function pickedAnswerB() {
+        var userchoice = "b";
+        if(userchoice === (questions[currentQindex].ans)) {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "That's correct!  Point scored!";
+            score ++;
+        }
+        else {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+            
+        }
+    }
+    function pickedAnswerC() {
+        var userchoice = "c";
+        if(userchoice === (questions[currentQindex].ans)) {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "That's correct!  Point scored!";
+            score ++;
+            
+        }
+        else {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+            
+        }   
+    }
+    function pickedAnswerD() {
+        var userchoice = "d";
+        if(userchoice === (questions[currentQindex].ans)) {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "That's correct!  Point scored!";
+            score ++;
+            
+        }
+        else {
+            displayResult = document.querySelector("#resultDisplay");
+            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+            
+        }
+        
+    }
+    // document.getElementById("resultDisplay").addEventListener("click", nextButton);
+    // function nextButton() {
+    // displayResult = document.querySelector("resultDisplay");
+    // displayResult.textContent = " ";
+    
+    currentQindex ++;
+
 }
     
 };
@@ -108,7 +154,7 @@ document.getElementById("button-style").addEventListener("click", initialClick);
 document.getElementById('display-box-b').style.visibility = "hidden";
 document.getElementById("button-style").addEventListener("click", revealQuestions);
 document.getElementById("button-style").addEventListener("click", hideStart);
-
+// document.getElementById("resultDisplay").addEventListener("click", nextButton);
 
 
 
@@ -128,5 +174,7 @@ document.getElementById("button-style").addEventListener("click", hideStart);
 //         4. for each question iteration, you can target the question-text id to set its value equal to the first question text
 //         5. them you can target the a,b,c,d id's and set those values to the corresponding answers
 
-
+//Currently the first question is runnign as planned.  a next button element could be created to go to the next question
+//and reset the index to the next question.  Try learning about index questions[currentQuestionIndex].answer)
+//currentQuestionIndex++;  at the bottom of the loop
 

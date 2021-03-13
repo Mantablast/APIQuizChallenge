@@ -58,10 +58,11 @@ button-style {
     color: var(--bold-text);
 }
 
-#question-container p {
+#question-container button {
     background-color: #f0cf88;
     padding: 10px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    margin:5px;
 }
