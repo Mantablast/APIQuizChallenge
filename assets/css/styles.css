@@ -49,3 +49,11 @@ button-style {
     font-weight: 700;
     color: var(--bold-text);
 }
+
+#question-container p {
+    background-color: #b6dae5;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}

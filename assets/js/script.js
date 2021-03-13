@@ -22,7 +22,7 @@ var optionD = document.getElementById('question-d');
 
 function hideStart() {
     document.getElementById('button-style').style.visibility = "hidden";
-}
+};
 //Starting timer and quiz
 function initialClick () {
     var fiveMinutes = 60 * 2,
@@ -31,6 +31,7 @@ function initialClick () {
     revealQuestions();
     startQuiz();
 };
+
 //timer display coundown and alert
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -56,12 +57,14 @@ function revealQuestions() {
 };
 
 //Create questions loop
-function startQuiz(questions) {
+function startQuiz(questions, quizQuestion, optionA, optionB, optionC, optionD) {
 
 //Attempt to loop questions through the upper display box
 for (i = 0; i < questions.length; i++) {
 //How do I display the first question.
+var answer = 
 
+console.log(questions[i]);
 // TODO: Check the user's answer against the correct answer
 if(answer[i] === questions[i].ans) {
     score ++;
