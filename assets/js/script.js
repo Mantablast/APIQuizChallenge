@@ -22,13 +22,14 @@ var nextQ = document.querySelector("#next");
 var userchoice = " ";
 var currentQindex = 0;
 var currentQ = questions[currentQindex];
+var scoreInfo = document.querySelector("#scorelist");
 
 function hideStart() {
     document.getElementById('button-style').style.visibility = "hidden";
 };
 //Starting timer and quiz
 function initialClick () {
-    var fiveMinutes = 60 * 2,
+    var fiveMinutes = 60 * 5,
         display = document.querySelector('#time-countdown');
     startTimer(fiveMinutes, display);
     revealQuestions();
@@ -48,8 +49,9 @@ function startTimer(duration, display) {
         display.textContent = "Remaining " + minutes + ":" + seconds;
 
         if (--timer < 0) {
-            alert("Oh no!  You ran out of time.  Please enter your username...")
-            // highScore(score);  to be created
+            alert("Oh no!  You ran out of time.  Your score is " + score + "\r\nPlease enter your username...\r\nPlease do not include any personal or sensitive information.")
+            highScores();
+            
         }
         
     }, 1000);
@@ -82,94 +84,95 @@ function startQuiz() {
     document.getElementById("question-c").addEventListener("click", pickedAnswerC);
     document.getElementById("question-d").addEventListener("click", pickedAnswerD);
     
-    function pickedAnswerA() {
-        var userchoice = "a";
-        if(userchoice === (questions[currentQindex].ans)) {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "That's correct!  Point scored!";
-            score ++;
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }
-        else {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }   
-    }
-    function pickedAnswerB() {
-        var userchoice = "b";
-        if(userchoice === (questions[currentQindex].ans)) {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "That's correct!  Point scored!";
-            score ++;
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }
-        else {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }
-    }
-    function pickedAnswerC() {
-        var userchoice = "c";
-        if(userchoice === (questions[currentQindex].ans)) {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "That's correct!  Point scored!";
-            score ++;
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }
-        else {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }   
-    }
-    function pickedAnswerD() {
-        var userchoice = "d";
-        if(userchoice === (questions[currentQindex].ans)) {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "That's correct!  Point scored!";
-            score ++;
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }
-        else {
-            // displayResult = document.querySelector("#resultDisplay");
-            displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            // nextQ = document.querySelector("next");
-            nextQ.textContent = "Click here for next question";
-        }
-        
-    }
+    
     
     
     
 // }
-    
-};
-
+console.log("Score" + score);
 document.getElementById("next").addEventListener("click", clearNext); 
+};
+function pickedAnswerA() {
+    var userchoice = "a";
+    if(userchoice === (questions[currentQindex].ans)) {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "That's correct!  Point scored!";
+        score ++;
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }
+    else {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }   
+}
+function pickedAnswerB() {
+    var userchoice = "b";
+    if(userchoice === (questions[currentQindex].ans)) {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "That's correct!  Point scored!";
+        score ++;
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }
+    else {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }
+}
+function pickedAnswerC() {
+    var userchoice = "c";
+    if(userchoice === (questions[currentQindex].ans)) {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "That's correct!  Point scored!";
+        score ++;
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }
+    else {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }   
+}
+function pickedAnswerD() {
+    var userchoice = "d";
+    if(userchoice === (questions[currentQindex].ans)) {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "That's correct!  Point scored!";
+        score ++;
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }
+    else {
+        // displayResult = document.querySelector("#resultDisplay");
+        displayResult.textContent = "No dice, beans'n rice.  No point scored.";
+        // nextQ = document.querySelector("next");
+        nextQ.textContent = "Click here for next question";
+    }
+    
+}
+
     
     function clearNext() {
         currentQindex++;
     var currentQ = document.getElementById("question-text");
-    currentQ.textContent = " ";
+    currentQ.textContent = "";
     var currentA = document.getElementById("question-a");
-    currentA.textContent = " ";
+    currentA.textContent = "";
     var currentB = document.getElementById("question-b");
-    currentB.textContent = " ";
+    currentB.textContent = "";
     var currentC = document.getElementById("question-c");
-    currentC.textContent = " ";
+    currentC.textContent = "";
     var currentD = document.getElementById("question-d");
-    currentD.textContent = " ";
+    currentD.textContent = "";
     displayResult.textContent = " ";
-    nextQ.textContent = " ";
+    nextQ.textContent = "";
     
 
     if(currentQindex === questions.length) {
@@ -181,13 +184,22 @@ document.getElementById("next").addEventListener("click", clearNext);
 };
 
 function highScores() {
-    console.log("end of flippin questions")
-}
+    console.log("End of questions")
+    currentQindex += 0;
+    var username = (prompt("Way to go!  Your score is " + score + "\r\nPlease enter your username...\r\nPlease do not include any personal or sensitive information."))
+    window.location = './score.html';
+    
+    // document.getElementById('display-box-b').style.visibility = "hidden";
+    scoreInfo.textContent= "Username: " + username;
+    scoreInfo.innerHTML = '<center><img src="https://stevensegallery.com/200/300"><br /><p>Im the bomb</p></center>';
+    document.body.appendChild(display-box-a);
+};
 
 document.getElementById("button-style").addEventListener("click", initialClick);
 document.getElementById('display-box-b').style.visibility = "hidden";
 document.getElementById("button-style").addEventListener("click", revealQuestions);
 document.getElementById("button-style").addEventListener("click", hideStart);
+document.getElementById("high-score").addEventListener("click", highScores);
 // document.getElementById("resultDisplay").addEventListener("click", nextButton);
 
 
