@@ -157,6 +157,7 @@ function startQuiz() {
 document.getElementById("next").addEventListener("click", clearNext); 
     
     function clearNext() {
+        currentQindex++;
     var currentQ = document.getElementById("question-text");
     currentQ.textContent = " ";
     var currentA = document.getElementById("question-a");
@@ -170,16 +171,17 @@ document.getElementById("next").addEventListener("click", clearNext);
     displayResult.textContent = " ";
     nextQ.textContent = " ";
     
-    if(questions === "undefined") {
+
+    if(currentQindex === questions.length) {
         highScores();
     } else {
-    currentQindex++;
+    
     startQuiz();
     }
 };
 
 function highScores() {
-    console.log("end of fucking questions")
+    console.log("end of flippin questions")
 }
 
 document.getElementById("button-style").addEventListener("click", initialClick);
