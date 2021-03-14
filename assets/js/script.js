@@ -18,6 +18,7 @@ var optionA = document.querySelector("#question-a");
 var optionB = document.querySelector("#question-b");
 var optionC = document.querySelector("#question-c");
 var optionD = document.querySelector("#question-d");
+var nextQ = document.querySelector("#next");
 var userchoice = " ";
 var currentQindex = 0;
 var currentQ = questions[currentQindex];
@@ -60,10 +61,10 @@ function revealQuestions() {
 
 //Create questions loop
 function startQuiz() {
-    
+// console.log(currentQindex);
 //Attempt to loop questions through the upper display box
-for (i = 0; i < questions.length; i++) {
-    
+// for (i = 0; i < questions.length; i++) {
+    console.log(currentQindex);
     var currentQ = document.getElementById("question-text");
     currentQ.textContent = questions[currentQindex].q;
     var currentA = document.getElementById("question-a");
@@ -84,71 +85,102 @@ for (i = 0; i < questions.length; i++) {
     function pickedAnswerA() {
         var userchoice = "a";
         if(userchoice === (questions[currentQindex].ans)) {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "That's correct!  Point scored!";
             score ++;
-            
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
         }
         else {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            
-        }
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
+        }   
     }
     function pickedAnswerB() {
         var userchoice = "b";
         if(userchoice === (questions[currentQindex].ans)) {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "That's correct!  Point scored!";
             score ++;
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
         }
         else {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
         }
     }
     function pickedAnswerC() {
         var userchoice = "c";
         if(userchoice === (questions[currentQindex].ans)) {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "That's correct!  Point scored!";
             score ++;
-            
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
         }
         else {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
         }   
     }
     function pickedAnswerD() {
         var userchoice = "d";
         if(userchoice === (questions[currentQindex].ans)) {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "That's correct!  Point scored!";
             score ++;
-            
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
         }
         else {
-            displayResult = document.querySelector("#resultDisplay");
+            // displayResult = document.querySelector("#resultDisplay");
             displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-            
+            // nextQ = document.querySelector("next");
+            nextQ.textContent = "Click here for next question";
         }
         
     }
-    // document.getElementById("resultDisplay").addEventListener("click", nextButton);
-    // function nextButton() {
-    // displayResult = document.querySelector("resultDisplay");
-    // displayResult.textContent = " ";
     
-    currentQindex ++;
-
-}
+    
+    
+// }
     
 };
 
+document.getElementById("next").addEventListener("click", clearNext); 
+    
+    function clearNext() {
+    var currentQ = document.getElementById("question-text");
+    currentQ.textContent = " ";
+    var currentA = document.getElementById("question-a");
+    currentA.textContent = " ";
+    var currentB = document.getElementById("question-b");
+    currentB.textContent = " ";
+    var currentC = document.getElementById("question-c");
+    currentC.textContent = " ";
+    var currentD = document.getElementById("question-d");
+    currentD.textContent = " ";
+    displayResult.textContent = " ";
+    nextQ.textContent = " ";
+    
+    if(questions === "undefined") {
+        highScores();
+    } else {
+    currentQindex++;
+    startQuiz();
+    }
+};
 
+function highScores() {
+    console.log("end of fucking questions")
+}
 
 document.getElementById("button-style").addEventListener("click", initialClick);
 document.getElementById('display-box-b').style.visibility = "hidden";
