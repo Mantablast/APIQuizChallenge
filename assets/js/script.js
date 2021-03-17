@@ -200,6 +200,7 @@ document.getElementById('display-box-b').style.visibility = "hidden";
 document.getElementById("button-style").addEventListener("click", revealQuestions);
 document.getElementById("button-style").addEventListener("click", hideStart);
 document.getElementById("high-score").addEventListener("click", highScores);
+document.onload
 // document.getElementById("resultDisplay").addEventListener("click", nextButton);
 
 
