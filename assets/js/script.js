@@ -22,7 +22,10 @@ var nextQ = document.querySelector("#next");
 var userchoice = " ";
 var currentQindex = 0;
 var currentQ = questions[currentQindex];
-var scoreInfo = document.querySelector("#scorelist");
+// var scoreInfo = document.querySelector("#score-list");
+var usernameInfo = document.querySelector("#user-list");
+var newScore = document.querySelector("#user-list");
+var highscores = document.querySelector("#score-list");
 
 function hideStart() {
     document.getElementById('button-style').style.visibility = "hidden";
@@ -187,24 +190,63 @@ function highScores() {
     console.log("End of questions")
     currentQindex += 0;
     var username = (prompt("Way to go!  Your score is " + score + "\r\nPlease enter your username...\r\nPlease do not include any personal or sensitive information."))
+    if(username === "") {
+        prompt("Username cannot be blank");
+    }
+    else {
+        alert("Success, onto the scores!");
+        localStorage.setItem('username', username);
+        localStorage.setItem('score', score);
+    }
+    var newScore = {
+        username: username,
+        score: score
+      };
+      highscores.push(newScore);
+      window.localStorage.setItem("highscores", JSON.stringify(highscores));
     window.location = './score.html';
     
     // document.getElementById('display-box-b').style.visibility = "hidden";
-    scoreInfo.textContent= "Username: " + username;
-    scoreInfo.innerHTML = '<center><img src="https://stevensegallery.com/200/300"><br /><p>Im the bomb</p></center>';
-    document.body.appendChild(display-box-a);
+    
+    // document.body.appendChild(display-box-a);
+    renderLastRegistered();
 };
 
-document.getElementById("button-style").addEventListener("click", initialClick);
-document.getElementById('display-box-b').style.visibility = "hidden";
-document.getElementById("button-style").addEventListener("click", revealQuestions);
-document.getElementById("button-style").addEventListener("click", hideStart);
-document.getElementById("high-score").addEventListener("click", highScores);
-document.onload
+
+
 // document.getElementById("resultDisplay").addEventListener("click", nextButton);
 
 
+function renderLastRegistered() {
+    // Retrieve the last email and password from localStorage using `getItem()`
+    var usernameInfo = localStorage.getItem('username');
+    var scoreInfo = localStorage.getItem('score');
+  
+    // If they are null, return early from this function
+    if (username === null || score === null) {
+      return;
+    }
+    else {
+        usernameInfo.textContent = username;
+        scoreInfo.textContent = score;
+    }
+    // Set the text of the 'userEmailSpan' and 'userPasswordSpan' to the corresponding values from localStorage
+    username.textContent = username;
+    scoreInfo.textContent = score;
+  };
 
+
+
+
+
+
+
+  document.getElementById("button-style").addEventListener("click", initialClick);
+  document.getElementById('display-box-b').style.visibility = "hidden";
+  document.getElementById("button-style").addEventListener("click", revealQuestions);
+  document.getElementById("button-style").addEventListener("click", hideStart);
+  document.getElementById("high-score").addEventListener("click", highScores);
+  document.onload
 
 // consider the following:
 //         <div id="question-container">

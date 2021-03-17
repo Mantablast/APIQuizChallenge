@@ -7,7 +7,12 @@ header {
     /* background-color: var(--background); */
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     
+}
+
+.title img {
+    width: 30vw;;
 }
 #quiz-container {
     margin: 10vw;
@@ -65,4 +70,17 @@ button-style {
     display: flex;
     flex-direction: column;
     margin:5px;
+}
+
+#scorelist-titles {
+    background-color: #004e66;
+    display: flex;
+    justify-content: space-evenly;
+    color:#e4edf1
+}
+
+#score-stats {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
