@@ -100,6 +100,7 @@ function pickedAnswerA() {
     else {
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
         nextQ.textContent = "Click here for next question";
+        var timer = timer-10;
     }   
 }
 function pickedAnswerB() {
@@ -112,6 +113,7 @@ function pickedAnswerB() {
     else {
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
         nextQ.textContent = "Click here for next question";
+        var timer = timer-10;
     }
 }
 function pickedAnswerC() {
@@ -124,6 +126,7 @@ function pickedAnswerC() {
     else {
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
         nextQ.textContent = "Click here for next question";
+        var timer = timer-10;
     }   
 }
 function pickedAnswerD() {
@@ -136,6 +139,7 @@ function pickedAnswerD() {
     else {
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
         nextQ.textContent = "Click here for next question";
+        var timer = timer-10;
     }
     
 }
