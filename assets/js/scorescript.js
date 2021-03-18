@@ -15,10 +15,11 @@ function renderLastRegistered(username, score) {
     // create a new heading and add it to the div
     let h2 = document.createElement('h2');
     h2.textContent = getUserName + scoreInfo;
-    div.appendChild(div);
+    div.appendChild(h2);
+    // div.appendChild(div);
     
     // add div to the document
-    document.body.appendChild(div);
+  
 
     // If they are null, return early from this function
     if (getUserName === null || scoreInfo === null) {
@@ -32,3 +33,6 @@ function renderLastRegistered(username, score) {
     // getUserName.textContent = username;
     // scoreInfo.textContent = score;
   };
+
+
+renderLastRegistered(null, null);
