@@ -25,4 +25,5 @@ https://stackoverflow.com/questions/20618355/how-to-write-a-countdown-timer-in-j
 
 
 ### ©️2021
+![Screenshot](./assets/images/QuizPlanning.png)
 ![Screenshot](./assets/images/JurassicScreen.png)

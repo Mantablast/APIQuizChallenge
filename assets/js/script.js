@@ -180,12 +180,16 @@ function highScores() {
     console.log("Username: " + username + " Score: " + score)
     window.location = './score.html'; 
 };
+
+function highScoreRead() {
+    window.location = './score.html'
+}
  //Event listeners
   document.getElementById("button-style").addEventListener("click", initialClick);
   document.getElementById('display-box-b').style.visibility = "hidden";
   document.getElementById("button-style").addEventListener("click", revealQuestions);
   document.getElementById("button-style").addEventListener("click", hideStart);
-  document.getElementById("high-score").addEventListener("click", highScores);
+  document.getElementById("high-score").addEventListener("click", highScoreRead);
   document.onload
 
   renderLastRegistered(null, null);

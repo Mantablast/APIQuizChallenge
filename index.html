@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Quiz</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-</head>
-<body>
-    <section id="quiz-container">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
-            <div id="high-score">
-                <a href="./score.html">High Scores</a>
-            </div>
-            <div class="title">
-                <img src="./assets/images/jurassic-01-01.png">
-            </div> 
-            <div id="time-countdown">
-                <p>Time Remaining:</p>
-            </div>
-        </nav>
-        </header>
-        
-        <section id="display-box-a">
-            <h2 id="question-text"></h2>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Quiz</title>
+        <link rel="stylesheet" href="./assets/css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+    <body>
+        <section id="quiz-container">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div id="high-score">
+                        <a href="./score.html">High Scores</a>
+                    </div>
+                    <div class="title">
+                        <img src="./assets/images/jurassic-01-01.png">
+                    </div> 
+                    <div id="time-countdown">
+                        <p>Time Remaining:</p>
+                    </div>
+                </nav>
+            </header>
+            <section id="display-box-a">
+                <h2 id="question-text"></h2>
+            </section>
+            <section id="display-box-b">
+                <div id="question-container">
+                        <button id="question-a" class="btn btn-danger"></button>
+                        <button id="question-b" class="btn btn-danger"></button>
+                        <button id="question-c" class="btn btn-danger"></button>
+                        <button id="question-d" class="btn btn-danger"></button>
+                </div>
+            </section>
+            <footer>
+                <div id="resultDisplay">
+                </div>
+                <div id="next">
+                </div> 
+            </footer> 
         </section>
-        <section id="display-box-b">
-            <div id="question-container">
-                    <button id="question-a" class="btn btn-danger"></button>
-                    <button id="question-b" class="btn btn-danger"></button>
-                    <button id="question-c" class="btn btn-danger"></button>
-                    <button id="question-d" class="btn btn-danger"></button>
-            </div>
-        </section>
-        
-        <footer>
-            <div id="resultDisplay">
-
-            </div>
-            <div id="next">
-
-            </div>
-        </footer>
-    </section>
-    <div id="button-style">
-        <button class="start-btn">
-            <h2>Start</h2>
-        </button>
-    </div>  
-    <script src="./assets/js/script.js"></script>
-</body>
+        <div id="button-style">
+            <button class="start-btn">
+                <h2>Start</h2>
+            </button>
+        </div>      
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>

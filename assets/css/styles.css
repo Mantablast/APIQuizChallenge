@@ -4,11 +4,9 @@
     --bold-text: #fdfcfb;
 }
 header {
-    /* background-color: var(--background); */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
 }
 
 .title img {
@@ -38,11 +36,6 @@ header {
     border-radius:30px;
     width: 150px;
     }
-button-style {
-    display: flex;
-    align-items: center;
-    text-align:center
-}
 #display-box-a {
     display: flex;
     justify-content: center;
@@ -60,13 +53,10 @@ button-style {
     border-radius:20px;
     border: 3px dotted black;
 }
-
-
 #display-box-a {
     font-weight: 700;
     color: var(--bold-text);
 }
-
 #question-container button {
     background-color: #bdf77b;
     padding: 10px;
@@ -76,14 +66,12 @@ button-style {
     margin:5px;
     color: #032631;
 }
-
 #scorelist-titles {
     background-color: #032631;
     display: flex;
     justify-content: space-evenly;
     color:#e4edf1
 }
-
 #score-stats {
     display: flex;
     justify-content: space-evenly;
@@ -94,12 +82,10 @@ button-style {
 #user-list, #score-list {
     padding: 10px;
 }
-
 #user-list{
     display: flex;
     justify-content: space-evenly;
 }
-
 .user {
     display: flex;
     align-items: center;
@@ -115,7 +101,6 @@ button-style {
 #next:hover {
     background-color: purple;
 }
-
 #resultDisplay, h2 {
     display: flex;
     justify-content: center;
