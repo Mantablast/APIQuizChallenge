@@ -1,7 +1,7 @@
 :root {
     --background: #004e66;
     --text-light: #e4edf1;
-    --bold-text: #540b0e;
+    --bold-text: #fdfcfb;
 }
 header {
     /* background-color: var(--background); */
@@ -19,6 +19,7 @@ header {
     display: block;
     flex-direction: column;
     justify-content: center; 
+    border-radius: 30px;
 }
 .start-btn {
     display:table;
@@ -29,8 +30,8 @@ header {
     font-size:14px;
     margin:0 auto;
     outline: 1px;;
-    background-color: var(--bold-text);
-    color:#fff;
+    background-color: #19404d;
+    color:rgb(245, 239, 239);
     border:none;
     text-align:center;
     cursor:pointer;
@@ -47,14 +48,17 @@ button-style {
     justify-content: center;
     align-items: baseline;
     height: 100px;
-    background-color: #b6dae5;
+    background-color: #19404d;
+    border-radius:20px;
 }
 #display-box-b {
     display: flex;
     justify-content: center;
     align-items: baseline;
     height: 250px;
-    background-color: #b6dae5;
+    background-color: #ffffff;
+    border-radius:20px;
+    border: 3px dotted black;
 }
 
 
@@ -64,16 +68,17 @@ button-style {
 }
 
 #question-container button {
-    background-color: #f0cf88;
+    background-color: #bdf77b;
     padding: 10px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     margin:5px;
+    color: #032631;
 }
 
 #scorelist-titles {
-    background-color: #004e66;
+    background-color: #032631;
     display: flex;
     justify-content: space-evenly;
     color:#e4edf1
@@ -83,10 +88,35 @@ button-style {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: cadetblue;
+    background-color: rgb(11, 23, 24);
 }
 
 #user-list, #score-list {
     padding: 10px;
 }
 
+#user-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+#next {
+    display: flex;
+    justify-content: center;
+    padding:  10px;
+    background-color: blueviolet;
+    border-radius: 20px;
+    color: white;
+}
+#next:hover {
+    background-color: purple;
+}
+
+#resultDisplay, h2 {
+    display: flex;
+    justify-content: center;
+}

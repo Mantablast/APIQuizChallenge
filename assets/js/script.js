@@ -1,10 +1,10 @@
 //Multiple choice
 var questions = [
-    {q: "Do cats fly?", a: "a) Sometimes in the fall.", b: "b) On occasion", c: "c) After dark", d: "d) In my dreams", ans:"c"}, 
-    {q: "Do bears fly?", a: "a) Sometimes in the winter.", b: "b) When you call them names", c: "c) Quite often", d: "d) No", ans: "b"}, 
-    {q: "Do fish swim?", a: "a) Sometimes in the spring.", b: "b) With cheering", c: "c) Never", d: "d) After bribing", ans: "d"},
-    {q: "Is Winnie the Pooh a bear?", a: "a) Barely.", b: "b) Pooh is an alien", c: "c) Nope", d: "d) Maybe", ans: "a"},
-    {q: "Sharks eat people.", a: "a) When people are dumb", b: "b) Only if the last resort", c: "c) Might as well", d: "d) No", ans: "a"}
+    {q: "How do you reference a javascript file from your html?", a: "a) <link ref='script.js'>$use()", b: "b) $on.load*&populate.script.js", c: "c) <script src='./assets/js/script.js'></script>", d: "d) Yoohoo javascript, Come here!", ans:"c"}, 
+    {q: "How do you prompt a user to type in an answer, in the browser?", a: "a) aler('type answer here')", b: "b) prompt('please type in the textbox provided')", c: "c) Not possible", d: "d) With jquery", ans: "b"}, 
+    {q: "What characters are used to start text on \na new \n line?", a: "a) &new", b: "b) *nl", c: "c) ~new", d: "d) backslash with letter n", ans: "d"},
+    {q: "Variables can include other variables.", a: "a) Absolutely", b: "b) Only if the internal variable is a string", c: "c) Only if presented in an array", d: "d) Nope", ans: "a"},
+    {q: "A variable outside of a function is a:", a: "a) global variable", b: "b) logical operator", c: "c) an object", d: "d) local variable.", ans: "a"}
 ];
 
 //Score to start at zero
@@ -66,11 +66,9 @@ function revealQuestions() {
     document.getElementById("display-box-b").style.visibility = "visible";  
 };
 
-//Create questions loop
+//Create questions 
 function startQuiz() {
-// console.log(currentQindex);
-//Attempt to loop questions through the upper display box
-// for (i = 0; i < questions.length; i++) {
+
     console.log(currentQindex);
     var currentQ = document.getElementById("question-text");
     currentQ.textContent = questions[currentQindex].q;
@@ -89,81 +87,59 @@ function startQuiz() {
     document.getElementById("question-c").addEventListener("click", pickedAnswerC);
     document.getElementById("question-d").addEventListener("click", pickedAnswerD);
     
-    
-    
-    
-    
-// }
 console.log("Score" + score);
 document.getElementById("next").addEventListener("click", clearNext); 
 };
 function pickedAnswerA() {
     var userchoice = "a";
     if(userchoice === (questions[currentQindex].ans)) {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "That's correct!  Point scored!";
         score ++;
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }
     else {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }   
 }
 function pickedAnswerB() {
     var userchoice = "b";
     if(userchoice === (questions[currentQindex].ans)) {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "That's correct!  Point scored!";
         score ++;
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }
     else {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }
 }
 function pickedAnswerC() {
     var userchoice = "c";
     if(userchoice === (questions[currentQindex].ans)) {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "That's correct!  Point scored!";
         score ++;
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }
     else {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }   
 }
 function pickedAnswerD() {
     var userchoice = "d";
     if(userchoice === (questions[currentQindex].ans)) {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "That's correct!  Point scored!";
         score ++;
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }
     else {
-        // displayResult = document.querySelector("#resultDisplay");
         displayResult.textContent = "No dice, beans'n rice.  No point scored.";
-        // nextQ = document.querySelector("next");
         nextQ.textContent = "Click here for next question";
     }
     
 }
-
-    
+  
     function clearNext() {
         currentQindex++;
     var currentQ = document.getElementById("question-text");
@@ -200,36 +176,11 @@ function highScores() {
         localStorage.setItem('username', username);
         localStorage.setItem('score', score);
     }
-    // var newScore = {
-    //     username: getUserName,
-    //     score: 
-    //   };
-    //   console.log(newScore);
-    //   highscores.push(newScore);
-    // console.log(localStorage.getItem(newScore));
-    //   window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
     console.log("Username: " + username + " Score: " + score)
-    window.location = './score.html';
-    
-    // document.getElementById('display-box-b').style.visibility = "hidden";
-    
-    // document.body.appendChild(display-box-a);
-    
+    window.location = './score.html'; 
 };
-
-
-
-// document.getElementById("resultDisplay").addEventListener("click", nextButton);
-
-
-
-
-
-
-
-
-
-
+ //Event listeners
   document.getElementById("button-style").addEventListener("click", initialClick);
   document.getElementById('display-box-b').style.visibility = "hidden";
   document.getElementById("button-style").addEventListener("click", revealQuestions);
