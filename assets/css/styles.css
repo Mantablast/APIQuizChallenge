@@ -86,4 +86,7 @@ button-style {
     background-color: cadetblue;
 }
 
+#user-list, #score-list {
+    padding: 10px;
+}
 

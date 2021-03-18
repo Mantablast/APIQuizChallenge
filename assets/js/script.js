@@ -228,9 +228,21 @@ function renderLastRegistered(username, score) {
     var scoreInfo = localStorage.getItem('score');
     // console.log(getUserName);
     // console.log(scoreInfo);
-    var getUserName = document.querySelector("#user-list");
-    var scoreInfo = document.querySelector("#score-list");
+    // var getUserName = document.querySelector("#user-list");
+    // var scoreInfo = document.querySelector("#score-list");
     
+    let div = document.createElement('div');
+    div.id = 'content';
+    div.className = 'user';
+    
+    // create a new heading and add it to the div
+    let h2 = document.createElement('h2');
+    h2.textContent = getUserName + scoreInfo;
+    div.appendChild(h2);
+    
+    // add div to the document
+    document.body.appendChild(div);
+
     // If they are null, return early from this function
     if (getUserName === null || scoreInfo === null) {
       return;
