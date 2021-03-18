@@ -214,7 +214,7 @@ function highScores() {
     // document.getElementById('display-box-b').style.visibility = "hidden";
     
     // document.body.appendChild(display-box-a);
-    renderLastRegistered(username, score);
+    
 };
 
 
@@ -222,39 +222,7 @@ function highScores() {
 // document.getElementById("resultDisplay").addEventListener("click", nextButton);
 
 
-function renderLastRegistered(username, score) {
-    // Retrieve the last email and password from localStorage using `getItem()`
-    var getUserName = localStorage.getItem('username');
-    var scoreInfo = localStorage.getItem('score');
-    // console.log(getUserName);
-    // console.log(scoreInfo);
-    // var getUserName = document.querySelector("#user-list");
-    // var scoreInfo = document.querySelector("#score-list");
-    
-    let div = document.createElement('div');
-    div.id = 'content';
-    div.className = 'user';
-    
-    // create a new heading and add it to the div
-    let h2 = document.createElement('h2');
-    h2.textContent = getUserName + scoreInfo;
-    div.appendChild(h2);
-    
-    // add div to the document
-    document.body.appendChild(div);
 
-    // If they are null, return early from this function
-    if (getUserName === null || scoreInfo === null) {
-      return;
-    }
-    else {
-        getUserName.textContent = username;
-        scoreInfo.textContent = score;
-    }
-    // Set the text of the 'userEmailSpan' and 'userPasswordSpan' to the corresponding values from localStorage
-    // getUserName.textContent = username;
-    // scoreInfo.textContent = score;
-  };
 
 
 
@@ -269,22 +237,5 @@ function renderLastRegistered(username, score) {
   document.getElementById("high-score").addEventListener("click", highScores);
   document.onload
 
-// consider the following:
-//         <div id="question-container">
-//             <h1 id="question-text"></h1>
-//             <p id="question-a"></p>
-//             <p id="question-b"></p>
-//             <p id="question-c"></p>
-//             <p id="question-d"></p>
-//         </div>
-//         Steps to take:
-//         1. When page loads hide question-container
-//         2. When User clicks start, hide start button then,show question-container
-//         3. begin looping through questions
-//         4. for each question iteration, you can target the question-text id to set its value equal to the first question text
-//         5. them you can target the a,b,c,d id's and set those values to the corresponding answers
-
-//Currently the first question is runnign as planned.  a next button element could be created to go to the next question
-//and reset the index to the next question.  Try learning about index questions[currentQuestionIndex].answer)
-//currentQuestionIndex++;  at the bottom of the loop
+  renderLastRegistered(null, null);
 
