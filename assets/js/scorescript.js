@@ -15,7 +15,7 @@ function renderLastRegistered(username, score) {
     // create a new heading and add it to the div
     let h2 = document.createElement('h2');
     h2.textContent = getUserName + scoreInfo;
-    div.appendChild(h2);
+    document.body.appendChild(h2);
     // div.appendChild(div);
     
     // add div to the document
