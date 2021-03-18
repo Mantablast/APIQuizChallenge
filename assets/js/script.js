@@ -23,9 +23,11 @@ var userchoice = " ";
 var currentQindex = 0;
 var currentQ = questions[currentQindex];
 // var scoreInfo = document.querySelector("#score-list");
-var usernameInfo = document.querySelector("#user-list");
-var newScore = document.querySelector("#user-list");
-var highscores = document.querySelector("#score-list");
+var getUserName = document.querySelector("#user-list");
+var scoreInfo = document.querySelector("#score-list");
+var highscores = " ";
+var getUserName =" ";
+
 
 function hideStart() {
     document.getElementById('button-style').style.visibility = "hidden";
@@ -190,7 +192,7 @@ function highScores() {
     console.log("End of questions")
     currentQindex += 0;
     var username = (prompt("Way to go!  Your score is " + score + "\r\nPlease enter your username...\r\nPlease do not include any personal or sensitive information."))
-    if(username === "") {
+    if(getUserName === "") {
         prompt("Username cannot be blank");
     }
     else {
@@ -198,18 +200,21 @@ function highScores() {
         localStorage.setItem('username', username);
         localStorage.setItem('score', score);
     }
-    var newScore = {
-        username: username,
-        score: score
-      };
-      highscores.push(newScore);
-      window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    // var newScore = {
+    //     username: getUserName,
+    //     score: 
+    //   };
+    //   console.log(newScore);
+    //   highscores.push(newScore);
+    // console.log(localStorage.getItem(newScore));
+    //   window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    console.log("Username: " + username + " Score: " + score)
     window.location = './score.html';
     
     // document.getElementById('display-box-b').style.visibility = "hidden";
     
     // document.body.appendChild(display-box-a);
-    renderLastRegistered();
+    renderLastRegistered(username, score);
 };
 
 
@@ -217,22 +222,26 @@ function highScores() {
 // document.getElementById("resultDisplay").addEventListener("click", nextButton);
 
 
-function renderLastRegistered() {
+function renderLastRegistered(username, score) {
     // Retrieve the last email and password from localStorage using `getItem()`
-    var usernameInfo = localStorage.getItem('username');
+    var getUserName = localStorage.getItem('username');
     var scoreInfo = localStorage.getItem('score');
-  
+    // console.log(getUserName);
+    // console.log(scoreInfo);
+    var getUserName = document.querySelector("#user-list");
+    var scoreInfo = document.querySelector("#score-list");
+    
     // If they are null, return early from this function
-    if (username === null || score === null) {
+    if (getUserName === null || scoreInfo === null) {
       return;
     }
     else {
-        usernameInfo.textContent = username;
+        getUserName.textContent = username;
         scoreInfo.textContent = score;
     }
     // Set the text of the 'userEmailSpan' and 'userPasswordSpan' to the corresponding values from localStorage
-    username.textContent = username;
-    scoreInfo.textContent = score;
+    // getUserName.textContent = username;
+    // scoreInfo.textContent = score;
   };
 
 
