@@ -1,7 +1,10 @@
 function renderLastRegistered(username, score) {
     console.log("Render Highscores!!");
-    var getUserName = localStorage.getItem('username');
-    var scoreInfo = localStorage.getItem('score');
+    // var getUserName = localStorage.getItem('username');
+    // var scoreInfo = localStorage.getItem('score');
+    var getUserName = JSON.parse(localStorage.getItem("username"));
+    var scoreInfo = JSON.parse(localStorage.getItem("score"));
+    
     let div = document.createElement('div');
     div.id = 'content';
     div.className = 'user';
@@ -22,3 +25,28 @@ function renderLastRegistered(username, score) {
 
 
 renderLastRegistered(null, null);
+
+//getUserName = JSON.parse(localStorage.getItem("username"));
+//scoreInfo = JSON.parse(localStorage.getItem("score"));
+// var loadTasks = function() {
+//   tasks = JSON.parse(localStorage.getItem("tasks"));
+
+//   // if nothing in localStorage, create a new object to track all task status arrays
+//   if (!tasks) {
+//     tasks = {
+//       toDo: [],
+//       inProgress: [],
+//       inReview: [],
+//       done: []
+//     };
+//   }
+
+//   // loop over object properties
+//   $.each(tasks, function(list, arr) {
+//     console.log(list, arr);
+//     // then loop over sub-array
+//     arr.forEach(function(task) {
+//       createTask(task.text, task.date, list);
+//     });
+//   });
+// };

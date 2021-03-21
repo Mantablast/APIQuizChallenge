@@ -184,7 +184,8 @@ function highScores() {
     console.log("Username: " + username + " Score: " + score)
     window.location = './score.html'; 
 };
-
+username.push(getUserName);
+score.push(scoreInfo);
 function highScoreRead() {
     window.location = './score.html'
 }
