@@ -2,8 +2,8 @@ function renderLastRegistered(username, score) {
     console.log("Render Highscores!!");
     // var getUserName = localStorage.getItem('username');
     // var scoreInfo = localStorage.getItem('score');
-    var getUserName = JSON.parse(localStorage.getItem("username"));
-    var scoreInfo = JSON.parse(localStorage.getItem("score"));
+    var getUserName = localStorage.getItem("username");
+    var scoreInfo = localStorage.getItem("score");
     
     let div = document.createElement('div');
     div.id = 'content';

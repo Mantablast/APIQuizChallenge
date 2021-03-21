@@ -183,9 +183,10 @@ function highScores() {
 
     console.log("Username: " + username + " Score: " + score)
     window.location = './score.html'; 
+    username.push(getUserName);
+    score.push(scoreInfo);
 };
-username.push(getUserName);
-score.push(scoreInfo);
+
 function highScoreRead() {
     window.location = './score.html'
 }
@@ -197,5 +198,5 @@ function highScoreRead() {
   document.getElementById("high-score").addEventListener("click", highScoreRead);
   document.onload
 
-  renderLastRegistered(null, null);
+//   renderLastRegistered(null, null);
 
