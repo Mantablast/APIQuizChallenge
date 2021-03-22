@@ -171,15 +171,16 @@ function pickedAnswerD() {
 function highScores() {
     console.log("End of questions")
     currentQindex += 0;
-    var scores = [{username : score}];
+    
     var username = (prompt("Way to go!  Your score is " + score + "\r\nPlease enter your username...\r\nPlease do not include any personal or sensitive information."))
+    var scores = [{getUserName : username, 
+        scoreInfo : score}];
     if(getUserName === "") {
         prompt("Username cannot be blank");
-        scores = [{" " : " "}];
     }
     else {
         alert("Success, onto the scores!");
-        localStorage.setItem("scores", JSON.stringify(scores));
+        window.localStorage.setItem('user', JSON.stringify(scores));
         
         
     }

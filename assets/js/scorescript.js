@@ -20,6 +20,7 @@ function renderLastRegistered(username, score) {
     else {
         getUserName.textContent = username;
         scoreInfo.textContent = score;
+        
     }
   };
 
