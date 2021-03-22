@@ -171,20 +171,23 @@ function pickedAnswerD() {
 function highScores() {
     console.log("End of questions")
     currentQindex += 0;
+    var scores = [{username : score}];
     var username = (prompt("Way to go!  Your score is " + score + "\r\nPlease enter your username...\r\nPlease do not include any personal or sensitive information."))
     if(getUserName === "") {
         prompt("Username cannot be blank");
+        scores = [{" " : " "}];
     }
     else {
         alert("Success, onto the scores!");
-        localStorage.setItem('username', username);
-        localStorage.setItem('score', score);
+        localStorage.setItem("scores", JSON.stringify(scores));
+        
+        
     }
 
     console.log("Username: " + username + " Score: " + score)
     window.location = './score.html'; 
-    username.push(getUserName);
-    score.push(scoreInfo);
+    // username.push(scores);
+    scores.push(scores);
 };
 
 function highScoreRead() {
